@@ -1,0 +1,67 @@
+{{define "New"}}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <title>Web Store</title>
+    </head>
+    <nav class="navbar navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="/">Web Store</a>
+    </nav>
+    <div class="container">
+        <body>
+            <div class="jumbotron jumbotron-fluid" style="height: 9.375rem; display: flex; align-items: center;">
+                <div class="container">
+                    <h1 class="display-5">New producto</h1>
+                    <p class="lead">Enter the details</p>
+                </div>
+            </div>
+            <form method="POST" action="insert">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <input type="text" name="description" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="number" name="price" class="form-control" step="0.01">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="amount">Amount:</label>
+                            <input type="number" name="amount" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1.25rem;"> 
+                  <button type="submit" value="save" class="btn btn-success" style="width: 9.375rem;">Save</button>
+                  <a class="btn btn-info" href="/" style="width: 9.375rem;">Back</a>
+                </div>                
+            </form>
+        </body>
+    </div>
+</html>
+{{end}}

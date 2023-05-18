@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <title>Alura loja</title> 
+    <title>Web Store</title> 
 </head>
 <nav class="navbar navbar-light bg-light mb-4">
     <a class="navbar-brand" href="/">Web Store</a>
@@ -30,18 +30,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                      {{range.}}
+                     {{range $index, $product := .}}
                         <tr>
-                            <td>{{.Name}}</td>
-                            <td>{{.Description}}</td>
-                            <td>R$ {{.Price}}</td>
-                            <td>{{.Amount}}</td>
+                            <td>{{$product.Name}}</td>
+                            <td>{{$product.Description}}</td>
+                            <td>R$ {{$product.Price}}</td>
+                            <td>{{$product.Amount}}</td>
+                            <td><a href="/delete?id={{$product.Id}}" class="btn btn-danger">Delete</a></td>
                         </tr>  
                       {{end}}                     
                     </tbody>
                 </table>
             </div>
         </section>
+        <div class="card-footer">
+         <a href="/new" class="btn btn-primary mb-2">Create new product</a>   
+        </div>
 
     </div>
 </body>
