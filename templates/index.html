@@ -1,20 +1,6 @@
 {{define "Index"}}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <title>Web Store</title> 
-</head>
-<nav class="navbar navbar-light bg-light mb-4">
-    <a class="navbar-brand" href="/">Web Store</a>
-</nav>
+{{template "_head"}}
+{{template "_nav"}}
 
 <body>
     <div class="container">
@@ -34,9 +20,15 @@
                         <tr>
                             <td>{{$product.Name}}</td>
                             <td>{{$product.Description}}</td>
-                            <td>R$ {{$product.Price}}</td>
+                            <td>{{printf "$%.2f" $product.Price}}</td>
                             <td>{{$product.Amount}}</td>
-                            <td><a href="/delete?id={{$product.Id}}" class="btn btn-danger">Delete</a></td>
+                            <td></td>
+                            <td>
+                                <div style="display: flex; gap: 15px; justify-content: center;">
+                                <a href="edit?id={{$product.Id}}" class="btn btn-info" style="width: 5rem;">Edit</a>
+                                <button onclick="onDelete('{{$product.Id}}')" class="btn btn-danger">Delete</button>
+                            </div>
+                            </td>
                         </tr>  
                       {{end}}                     
                     </tbody>
@@ -46,9 +38,17 @@
         <div class="card-footer">
          <a href="/new" class="btn btn-primary mb-2">Create new product</a>   
         </div>
-
     </div>
 </body>
+
+<script>
+    function onDelete(id){
+        let response = confirm("Are you sure you want to delete this product?")
+        if(response){
+            window.location = "/delete?id=" + id
+        }
+    }
+</script>
 
 </html>
 {{end}}
