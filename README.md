@@ -1,7 +1,8 @@
-<div style="width:100%; display: flex; gap: 15px; align-items: center;"> 
-<h1> Web Store App </h1>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" height="70" width="70" style="margin-bottom:1.5625rem"/>
+<div style="width:100%; display: flex; align-items: center; justify-content: center;">
+  <h1>Web Store App</h1>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" height="70" width="70" style="margin-bottom: 1.5625rem"/>
 </div>
+
 
 
 ### 🛠  Description   
@@ -17,7 +18,7 @@ User Interface.
 
 <p align="center">
   <kbd>
- <img width="800" style="border-radius: 10px" height="400" src="" alt="Intro"> 
+ <img width="800" style="border-radius: 10px" height="400" src="https://github.com/JuanCampbsi/Web_Store_App/blob/77a7f78d7dffbec5d261443a19d88322a80d5052/templates/assets/preview.gif" alt="Intro"> 
   </kbd>
   </br>
 </p>
