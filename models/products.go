@@ -2,7 +2,8 @@ package models
 
 import (
 	"log"
-	db "projects/goStudyng/Web_Store_App/db"
+	db "store/db"
+	"store/store"
 )
 
 type Product struct {
@@ -42,16 +43,16 @@ func SearchProducts() []Product {
 	return products
 }
 
-func CreateProduct(model *Product) {
+func CreateProduct(serializedData *store.Product) {
 	db := db.ConnectDatabase()
 
 	insertData, err := db.Prepare("insert into products(name, description, price, amount) values($1, $2, $3, $4)")
 	if err != nil {
 		panic(err.Error())
 	}
-	insertData.Exec(model.Name, model.Description, model.Price, model.Amount)
+	insertData.Exec(serializedData.Name(), serializedData.Description(), serializedData.Price(), serializedData.Amount())
 	defer db.Close()
-	log.Println("Product object:", model)
+	log.Println("Product object:", serializedData.Name())
 }
 
 func DeleteProduct(id string) {
@@ -91,14 +92,14 @@ func EditProduct(id string) Product {
 	return productToUpdate
 }
 
-func UpdateProduct(model *Product) {
+func UpdateProduct(serializedData *store.Product) {
 	db := db.ConnectDatabase()
 
 	updateData, err := db.Prepare("update products set name = $2, description = $3, price = $4, amount = $5 where id = $1")
 	if err != nil {
 		panic(err.Error())
 	}
-	updateData.Exec(model.Id, model.Name, model.Description, model.Price, model.Amount)
+	updateData.Exec(serializedData.Id(), serializedData.Name(), serializedData.Description(), serializedData.Price(), serializedData.Amount())
 	defer db.Close()
-	log.Println("Product object update:", model)
+	log.Println("Product object update:", serializedData.Id())
 }

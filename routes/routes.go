@@ -2,7 +2,7 @@ package routes
 
 import (
 	"net/http"
-	"projects/goStudyng/Web_Store_App/controllers"
+	"store/controllers"
 )
 
 func LoadRoutes() {

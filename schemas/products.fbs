@@ -1,0 +1,11 @@
+namespace store;
+
+table Product {
+  id: int;
+  name: string;
+  description: string;
+  price: float64;
+  amount: int;
+}
+
+root_type Product;

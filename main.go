@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"projects/goStudyng/Web_Store_App/routes"
+	"store/routes"
 
 	_ "github.com/lib/pq"
 )

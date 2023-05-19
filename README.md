@@ -10,7 +10,11 @@
 
 </br>
 
-The project aims to create a simple web application, using the Go programming language (Golang) without the use of frameworks. The application was developed with the aim of applying MVC (Model-View-Controller) concepts and performing basic CRUD operations (Create, Read, Update, Delete). PostgreSQL database is used for data storage.
+The project aims to create a simple web application using the Go programming language (Golang) without the use of frameworks. The application follows the MVC (Model-View-Controller) architecture and performs basic CRUD operations (Create, Read, Update, Delete). PostgreSQL database is used for data storage.
+
+The project also includes the integration of FlatBuffers, a serialization library, for efficient data storage and retrieval. FlatBuffers provides a compact binary format that allows for fast serialization and deserialization of data, making it suitable for applications that require high performance and low memory usage.
+
+By leveraging FlatBuffers, the application can optimize data serialization and minimize memory overhead, improving overall efficiency and scalability.
 
 
 ## Preview 
@@ -54,15 +58,18 @@ $ go mod tidy
 # Run the application in development mode
 $ go run main.go
 
+# To change the schema files and generate a new buff, install FlatBuffers on your machine and run the command below
+$ flatc --go schemas/products.fbs
+
 ```
 
-</br>
+</br>	
 
 ### ⌨ Stack of technologies and libraries
 
--   [Golang](https://go.dev/doc/)
--   [PostgreSQL](https://www.postgresql.org/download/)
-
+-   [Golang](https://go.dev/doc/) - version 1.20
+-   [PostgreSQL](https://www.postgresql.org/download/) - version 10.22 
+-   [FlatBuffers](https://flatbuffers.dev/) - version 23.5.9 
 </br>
 
 👨‍💻 **Author** 💻
