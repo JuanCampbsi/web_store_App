@@ -1,6 +1,7 @@
-<div style="width:100%; display: flex; align-items: center; justify-content: center;">
-  <h1>Web Store App</h1>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" height="70" width="70" style="margin-bottom: 1.5625rem"/>
+<div style="width:100%; display: flex; align-items: center; ">
+  <h1>Web Store App
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" height="70" width="70" style="margin-bottom: -24px"/></h1>
+  
 </div>
 
 
